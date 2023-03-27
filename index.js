@@ -76,3 +76,8 @@ function restartGame() {
   cells.forEach((cell) => (cell.textContent = ""));
   running = true;
 }
+
+let arr = [1, 2, 3, 4, 5];
+console.log(arr[3]);
+arr[7] = 8;
+console.log(arr);

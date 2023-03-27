@@ -21,3 +21,18 @@
     width: 225px;
     margin: auto;
 }
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    font-family: 'Delicious Handrawn', cursive;
+}
+
+button:hover {
+    background: gray;
+    color: black;
+}
