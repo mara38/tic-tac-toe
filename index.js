@@ -1,6 +1,7 @@
 const cells = document.querySelectorAll(".cell");
 const statusText = document.querySelector("#statusText");
 const restartBtn = document.querySelector("#restartBtn");
+//Checks cells for win combination
 const winConditions = [
   [0, 1, 2],
   [3, 4, 5],
@@ -23,6 +24,8 @@ function initializeGame() {
   statusText.textContent = `${currentPlayer}'s turn`;
   running = true;
 }
+
+
 function cellClicked() {
   const cellIndex = this.getAttribute("cellIndex");
 
@@ -33,14 +36,18 @@ function cellClicked() {
   updateCell(this, cellIndex);
   checkWinner();
 }
+
 function updateCell(cell, index) {
   options[index] = currentPlayer;
   cell.textContent = currentPlayer;
 }
+
 function changePlayer() {
   currentPlayer = currentPlayer == "X" ? "O" : "X";
   statusText.textContent = `${currentPlayer}'s turn`;
 }
+
+//Checks winner from an array of results and displays a winner
 function checkWinner() {
   let roundWon = false;
 
@@ -69,6 +76,8 @@ function checkWinner() {
     changePlayer();
   }
 }
+
+//Restarts game
 function restartGame() {
   currentPlayer = "X";
   options = ["", "", "", "", "", "", "", "", ""];
@@ -76,8 +85,3 @@ function restartGame() {
   cells.forEach((cell) => (cell.textContent = ""));
   running = true;
 }
-
-let arr = [1, 2, 3, 4, 5];
-console.log(arr[3]);
-arr[7] = 8;
-console.log(arr);
